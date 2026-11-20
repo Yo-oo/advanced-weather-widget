@@ -1,5 +1,5 @@
 /*
- * Copyright 2026  Petar Nedyalkov
+ * Copyright 2026 Petar Nedyalkov
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -12,8 +12,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://gnu.org>.
  */
+
 
 /**
  * qWeather.js - QWeather (和风天气) current + daily + hourly fetcher
@@ -30,6 +31,8 @@
  * assigns a project-specific host to each developer account.
  * Falls back to devapi.qweather.com when no host is configured.
  */
+
+.import "../js/debug.js" as Dbg
 
 /**
  * Map a QWeather icon code to WMO weather code.
@@ -103,6 +106,23 @@ function _calcDewPoint(T, rh) {
     return Math.round((c * gamma) / (b - gamma) * 10) / 10;
 }
 
+/**
+ * Parse a UTC offset (in minutes) from a QWeather ISO8601 timestamp.
+ * QWeather's obsTime/updateTime look like "2026-10-12T23:07+08:00" (or "Z").
+ * Returns NaN when the string carries no usable zone info.
+ */
+function _qwOffsetMinsFromIso(s) {
+    if (!s) return NaN;
+    s = String(s).trim();
+    if (/[Zz]$/.test(s)) return 0;
+    var m = s.match(/([+-])(\d{2}):?(\d{2})\s*$/);
+    if (!m) return NaN;
+    var sign = (m[1] === "-") ? -1 : 1;
+    var h = parseInt(m[2], 10), mi = parseInt(m[3], 10);
+    if (isNaN(h) || isNaN(mi)) return NaN;
+    return sign * (h * 60 + mi);
+}
+
 /** The calendar date (YYYY-MM-DD) immediately after dateStr, in the widget's
  *  own local time - used to append the closing 00:00 entry so the hourly
  *  forecast reads 00:00..00:00 instead of stopping at 23:00. */
@@ -145,6 +165,7 @@ function fetchCurrent(service, W, chain, idx) {
     var r = service.weatherRoot;
     var key = service._qwKey();
     if (!key) {
+        Dbg.log("QWeather", "no API key set in Settings → provider skipped, trying the next one");
         service._tryProvider(chain, idx + 1);
         return;
     }
@@ -154,7 +175,7 @@ function fetchCurrent(service, W, chain, idx) {
     var url = base + "/v7/weather/now?location=" + encodeURIComponent(loc)
         + "&unit=m";
 
-    var req = new XMLHttpRequest();
+    var req = Dbg.xhr("QWeather", "fetchCurrent");
     req.open("GET", url);
     req.setRequestHeader("X-QW-Api-Key", key);
     req.onreadystatechange = function () {
@@ -174,6 +195,7 @@ function fetchCurrent(service, W, chain, idx) {
             return;
         }
         var n = d.now;
+        var _qwOff = _qwOffsetMinsFromIso(n.obsTime || d.updateTime);
         service._qw_cur = {
             temperatureC:    parseFloat(n.temp),
             apparentC:       parseFloat(n.feelsLike),
@@ -190,7 +212,7 @@ function fetchCurrent(service, W, chain, idx) {
             snowDepthCm:     NaN,
             weatherCode:     _qwCodeToWmo(n.icon),
             isDay:           _isDay(n.icon),
-            locationUtcOffsetMins: 0,
+            locationUtcOffsetMins: (isNaN(_qwOff) ? 0 : _qwOff),
             sunriseTimeText: "--",
             sunsetTimeText:  "--",
             dailyData:       []
@@ -210,7 +232,7 @@ function _fetchDailyAttempt(service, W, key, loc, gen, base, spans, spanIdx) {
     var url = base + "/v7/weather/" + span + "d?location=" + encodeURIComponent(loc)
         + "&unit=m";
 
-    var req = new XMLHttpRequest();
+    var req = Dbg.xhr("QWeather", "_fetchDailyAttempt");
     req.open("GET", url);
     req.setRequestHeader("X-QW-Api-Key", key);
     req.onreadystatechange = function () {
@@ -256,6 +278,14 @@ function _fetchDailyAttempt(service, W, key, loc, gen, base, spans, spanIdx) {
             _fetchDailyAttempt(service, W, key, loc, gen, base, spans, spanIdx + 1);
             return;
         }
+        // QWeather daily responses carry their own updateTime with the
+        // location's +HH:MM zone (e.g. "+08:00" for Shanghai). If the /now
+        // response had no usable obsTime, try the daily one before giving up.
+        if (!service._qw_cur.locationUtcOffsetMins && d && d.updateTime) {
+            var _off2 = _qwOffsetMinsFromIso(d.updateTime);
+            if (!isNaN(_off2)) service._qw_cur.locationUtcOffsetMins = _off2;
+        }
+        var _needSunPatch = !service._qw_cur.locationUtcOffsetMins;
         service._qw_cur.dailyData = nd;
         var r = service.weatherRoot;
         r.weatherDataStaged = service._qw_cur;
@@ -264,6 +294,16 @@ function _fetchDailyAttempt(service, W, key, loc, gen, base, spans, spanIdx) {
         r.updateText = service._formatUpdateText("qWeather");
 
         service._fetchAlertsIfNeeded();
+        // QWeather's own sunrise/sunset strings ARE already location-local
+        // "HH:mm", but without a numeric UTC offset every DetailsView calc
+        // combining them with locationUtcOffsetMins (sun-arc progress,
+        // time-until-sunset, moon arc, upcoming events) silently uses UTC.
+        // The ISO parse above fixes the common case with no extra request;
+        // fall back to Open-Meteo (same as BBC/met.no/stormGlass) when the
+        // timestamps carried no zone info.
+        if (_needSunPatch) {
+            try { service._fetchSunTimesOpenMeteo(); } catch (e) {}
+        }
         // Air quality: QWeather's /airquality/v1/current returns whichever
         // of its 70+ supported index standards it defaults to when no
         // `type=` filter is requested (its own proprietary QAQI most
@@ -281,11 +321,74 @@ function _fetchDailyAttempt(service, W, key, loc, gen, base, spans, spanIdx) {
     req.send();
 }
 
+/** The hours of dateStr (plus the closing 00:00 of the next day) out of one parsed answer. */
+function _hourlyDay(d, W, dateStr) {
+    var hours = [];
+    var nextDateStr = _nextDateStr(dateStr);
+    var nextEntry = null;
+    if (d && d.code === "200" && d.hourly) {
+        for (var i = 0; i < d.hourly.length; i++) {
+            var h = d.hourly[i];
+            var fxTime = new Date(h.fxTime);
+            var fxDateStr = Qt.formatDate(fxTime, "yyyy-MM-dd");
+            var isTarget = fxDateStr === dateStr;
+            var isClosing = !nextEntry && fxDateStr === nextDateStr;
+            if (!isTarget && !isClosing) continue;
+            var entry = {
+                hour: Qt.formatTime(fxTime, "HH:mm"),
+                tempC: parseFloat(h.temp),
+                code: _qwCodeToWmo(h.icon),
+                windKmh: parseFloat(h.windSpeed),
+                windDeg: parseFloat(h.wind360),
+                windDir: parseFloat(h.wind360),
+                humidity: parseFloat(h.humidity),
+                humidityPercent: parseFloat(h.humidity),
+                pressureHpa: parseFloat(h.pressure),
+                precipMm: (h.precip !== undefined && h.precip !== null) ? parseFloat(h.precip) : NaN,
+                precipMmh: (h.precip !== undefined && h.precip !== null) ? parseFloat(h.precip) : NaN,
+                precipProb: (h.pop !== undefined && h.pop !== null) ? parseFloat(h.pop) : NaN,
+                pop: (h.pop !== undefined && h.pop !== null) ? parseFloat(h.pop) : NaN,
+                dewPointC: (h.dew !== undefined && h.dew !== null)
+                    ? parseFloat(h.dew)
+                    : _calcDewPoint(parseFloat(h.temp), parseFloat(h.humidity))
+            };
+            if (isTarget) {
+                hours.push(entry);
+            } else {
+                // d.hourly is chronological, so the first match for
+                // the next date is its earliest (00:00) hour -
+                // append it to close the loop at midnight. Only
+                // present when the requested span (see
+                // _hourlySpanHours) happens to reach that far.
+                entry.isNextDay = true;
+                nextEntry = entry;
+            }
+        }
+    }
+    if (nextEntry) hours.push(nextEntry);
+    return hours;
+}
+
+/** Hours of every day firstDate..lastDate out of ONE already-parsed answer: { "yyyy-MM-dd": [hours] }
+ *  (days the answer does not cover are left out). Same per-day result fetchHourly gives. */
+function _hourlyDays(d, W, firstDate, lastDate) {
+    var map = {};
+    var ds = firstDate;
+    for (var guard = 0; guard < 40 && ds <= lastDate; ++guard) {
+        var a = _hourlyDay(d, W, ds);
+        if (a && a.length)
+            map[ds] = a;
+        ds = _nextDateStr(ds);
+    }
+    return map;
+}
+
 function fetchHourly(service, W, dateStr) {
     var gen = service._refreshGen;
     var r = service.weatherRoot;
     var key = service._qwKey();
     if (!key) {
+        Dbg.log("QWeather", "no API key set in Settings → no hourly forecast");
         r.hourlyData = [];
         return;
     }
@@ -294,60 +397,45 @@ function fetchHourly(service, W, dateStr) {
     var url = base + "/v7/weather/" + _hourlySpanHours(dateStr) + "h?location=" + encodeURIComponent(loc)
         + "&unit=m";
 
-    var req = new XMLHttpRequest();
+    var req = Dbg.xhr("QWeather", "fetchHourly");
     req.open("GET", url);
     req.setRequestHeader("X-QW-Api-Key", key);
     req.onreadystatechange = function () {
         if (req.readyState !== XMLHttpRequest.DONE) return;
         if (service._refreshGen !== gen) return;
-        var hours = [];
-        var nextDateStr = _nextDateStr(dateStr);
-        var nextEntry = null;
+        var d;
         if (req.status === 200) {
-            var d;
             try { d = JSON.parse(req.responseText); } catch (e) { /* ignore */ }
-            if (d && d.code === "200" && d.hourly) {
-                for (var i = 0; i < d.hourly.length; i++) {
-                    var h = d.hourly[i];
-                    var fxTime = new Date(h.fxTime);
-                    var fxDateStr = Qt.formatDate(fxTime, "yyyy-MM-dd");
-                    var isTarget = fxDateStr === dateStr;
-                    var isClosing = !nextEntry && fxDateStr === nextDateStr;
-                    if (!isTarget && !isClosing) continue;
-                    var entry = {
-                        hour: Qt.formatTime(fxTime, "HH:mm"),
-                        tempC: parseFloat(h.temp),
-                        code: _qwCodeToWmo(h.icon),
-                        windKmh: parseFloat(h.windSpeed),
-                        windDeg: parseFloat(h.wind360),
-                        windDir: parseFloat(h.wind360),
-                        humidity: parseFloat(h.humidity),
-                        humidityPercent: parseFloat(h.humidity),
-                        pressureHpa: parseFloat(h.pressure),
-                        precipMm: (h.precip !== undefined && h.precip !== null) ? parseFloat(h.precip) : NaN,
-                        precipMmh: (h.precip !== undefined && h.precip !== null) ? parseFloat(h.precip) : NaN,
-                        precipProb: (h.pop !== undefined && h.pop !== null) ? parseFloat(h.pop) : NaN,
-                        pop: (h.pop !== undefined && h.pop !== null) ? parseFloat(h.pop) : NaN,
-                        dewPointC: (h.dew !== undefined && h.dew !== null)
-                            ? parseFloat(h.dew)
-                            : _calcDewPoint(parseFloat(h.temp), parseFloat(h.humidity))
-                    };
-                    if (isTarget) {
-                        hours.push(entry);
-                    } else {
-                        // d.hourly is chronological, so the first match for
-                        // the next date is its earliest (00:00) hour -
-                        // append it to close the loop at midnight. Only
-                        // present when the requested span (see
-                        // _hourlySpanHours) happens to reach that far.
-                        entry.isNextDay = true;
-                        nextEntry = entry;
-                    }
-                }
-            }
         }
-        if (nextEntry) hours.push(nextEntry);
-        r.hourlyData = hours;
+        r.setHourlyResult(dateStr, _hourlyDay(d, W, dateStr));
+    };
+    req.send();
+}
+
+/** Hours of every day firstDate..lastDate from ONE request: callback({ dateStr: [hours] }), {} on any failure. */
+function fetchHourlyAll(service, W, firstDate, lastDate, callback) {
+    var key = service._qwKey();
+    if (!key) {
+        Dbg.log("QWeather", "no API key set in Settings → no hourly forecast");
+        callback({});
+        return;
+    }
+    var base = service._qwHost();
+    var loc = service.longitude.toFixed(2) + "," + service.latitude.toFixed(2);
+    // the span (24/72/168 h) is chosen for the LAST day wanted, so one answer reaches as far as the requested range
+    var url = base + "/v7/weather/" + _hourlySpanHours(lastDate) + "h?location=" + encodeURIComponent(loc)
+        + "&unit=m";
+
+    var req = Dbg.xhr("QWeather", "fetchHourlyAll");
+    req.open("GET", url);
+    req.setRequestHeader("X-QW-Api-Key", key);
+    req.onreadystatechange = function () {
+        if (req.readyState !== XMLHttpRequest.DONE) return;
+        var d;
+        if (req.status === 200) {
+            try { d = JSON.parse(req.responseText); } catch (e) { /* ignore */ }
+        }
+        callback(_hourlyDays(d, W, firstDate, lastDate));
     };
     req.send();
 }

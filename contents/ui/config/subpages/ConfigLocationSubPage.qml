@@ -1,5 +1,5 @@
 /*
- * Copyright 2026  Petar Nedyalkov
+ * Copyright 2026 Petar Nedyalkov
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -12,7 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://gnu.org>.
  */
 
 /**
@@ -23,6 +23,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import "../../js/debug.js" as Dbg
 
 ColumnLayout {
     id: searchSubPageRoot
@@ -38,28 +39,43 @@ ColumnLayout {
 
     // ── Current-location metadata (fetched from Open-Meteo) ────────────
     property real currentTemperature: NaN
-    property int  currentWeatherCode: -1
+    property int currentWeatherCode: -1
     property string currentTemperatureUnit: "°C"
     property bool currentInfoBusy: false
-    property int  _currentInfoGen: 0
+    property int _currentInfoGen: 0
 
     function _weatherCodeDescription(code) {
         // WMO weather interpretation codes (Open-Meteo)
-        if (code === 0)  return i18n("Clear sky");
-        if (code === 1)  return i18n("Mainly clear");
-        if (code === 2)  return i18n("Partly cloudy");
-        if (code === 3)  return i18n("Overcast");
-        if (code === 45 || code === 48) return i18n("Fog");
-        if (code === 51 || code === 53 || code === 55) return i18n("Drizzle");
-        if (code === 56 || code === 57) return i18n("Freezing drizzle");
-        if (code === 61 || code === 63 || code === 65) return i18n("Rain");
-        if (code === 66 || code === 67) return i18n("Freezing rain");
-        if (code === 71 || code === 73 || code === 75) return i18n("Snow");
-        if (code === 77) return i18n("Snow grains");
-        if (code === 80 || code === 81 || code === 82) return i18n("Rain showers");
-        if (code === 85 || code === 86) return i18n("Snow showers");
-        if (code === 95) return i18n("Thunderstorm");
-        if (code === 96 || code === 99) return i18n("Thunderstorm with hail");
+        if (code === 0)
+            return i18n("Clear sky");
+        if (code === 1)
+            return i18n("Mainly clear");
+        if (code === 2)
+            return i18n("Partly cloudy");
+        if (code === 3)
+            return i18n("Overcast");
+        if (code === 45 || code === 48)
+            return i18n("Fog");
+        if (code === 51 || code === 53 || code === 55)
+            return i18n("Drizzle");
+        if (code === 56 || code === 57)
+            return i18n("Freezing drizzle");
+        if (code === 61 || code === 63 || code === 65)
+            return i18n("Rain");
+        if (code === 66 || code === 67)
+            return i18n("Freezing rain");
+        if (code === 71 || code === 73 || code === 75)
+            return i18n("Snow");
+        if (code === 77)
+            return i18n("Snow grains");
+        if (code === 80 || code === 81 || code === 82)
+            return i18n("Rain showers");
+        if (code === 85 || code === 86)
+            return i18n("Snow showers");
+        if (code === 95)
+            return i18n("Thunderstorm");
+        if (code === 96 || code === 99)
+            return i18n("Thunderstorm with hail");
         return "";
     }
 
@@ -67,8 +83,7 @@ ColumnLayout {
         try {
             var lat = configRoot.cfg_latitude;
             var lon = configRoot.cfg_longitude;
-            if (!configRoot.cfg_locationName || configRoot.cfg_locationName.length === 0
-                || (lat === 0 && lon === 0)) {
+            if (!configRoot.cfg_locationName || configRoot.cfg_locationName.length === 0 || (lat === 0 && lon === 0)) {
                 currentTemperature = NaN;
                 currentWeatherCode = -1;
                 currentInfoBusy = false;
@@ -76,13 +91,13 @@ ColumnLayout {
             }
             currentInfoBusy = true;
             var myGen = ++_currentInfoGen;
-            var req = new XMLHttpRequest();
-            req.open("GET", "https://api.open-meteo.com/v1/forecast?latitude="
-                + encodeURIComponent(lat) + "&longitude=" + encodeURIComponent(lon)
-                + "&current=temperature_2m,weather_code&timezone=auto");
-            req.onreadystatechange = function() {
-                if (req.readyState !== XMLHttpRequest.DONE) return;
-                if (myGen !== _currentInfoGen) return;
+            var req = Dbg.xhr("Config/Location", "_fetchCurrentInfo");
+            req.open("GET", "https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(lat) + "&longitude=" + encodeURIComponent(lon) + "&current=temperature_2m,weather_code&timezone=auto");
+            req.onreadystatechange = function () {
+                if (req.readyState !== XMLHttpRequest.DONE)
+                    return;
+                if (myGen !== _currentInfoGen)
+                    return;
                 currentInfoBusy = false;
                 if (req.status === 200) {
                     try {
@@ -98,7 +113,7 @@ ColumnLayout {
                     } catch (e) { /* ignore */ }
 
                     // Update config with missing metadata if needed. This handles cases where
-                    // the search provider (e.g. Nominatim) doesn't supply timezone or altitude.
+                    // the search provider (Photon) doesn't supply timezone or altitude.
                     if (data.timezone && (!configRoot.cfg_timezone || configRoot.cfg_timezone.length === 0)) {
                         configRoot.cfg_timezone = data.timezone;
                     }
@@ -137,12 +152,12 @@ ColumnLayout {
     // Re-run the Open-Meteo lookup whenever the active location changes.
     // Using a derived property + its own change handler avoids Connections
     // on configRoot (which caused initialisation issues in some Qt 6 builds).
-    readonly property string activeLocKey:
-        "" + configRoot.cfg_latitude + "|" + configRoot.cfg_longitude + "|" + (configRoot.cfg_locationName || "")
+    readonly property string activeLocKey: "" + configRoot.cfg_latitude + "|" + configRoot.cfg_longitude + "|" + (configRoot.cfg_locationName || "")
     onActiveLocKeyChanged: Qt.callLater(_fetchCurrentInfo)
 
     Component.onCompleted: Qt.callLater(_fetchCurrentInfo)
 
+    // Location search uses Photon only (photon.komoot.io, OpenStreetMap data).
     function performSearch(query) {
         if (!query || query.trim().length < 2) {
             searchResults = [];
@@ -159,18 +174,75 @@ ColumnLayout {
         selectedResult = null;
         selectedIndex = -1;
         resultsList.currentIndex = -1;
-        var collected = [], pending = 0;
 
-        function queueRequest() {
-            pending += 1;
-        }
-
-        function done() {
-            pending -= 1;
-            if (pending > 0)
+        // lang=default: every place is named in its own local language (София, not Sofia).
+        // Without it Photon uses the Accept-Language header of the request, which here
+        // follows the system locale and gives English names.
+        var url = "https://photon.komoot.io/api?q=" + encodeURIComponent(q) + "&limit=15&lang=default";
+        Dbg.log("Location search", "#" + requestId + " Photon GET " + url);
+        var req = Dbg.xhr("Config/Location", "performSearch");
+        req.open("GET", url);
+        req.onreadystatechange = function () {
+            if (req.readyState !== XMLHttpRequest.DONE)
                 return;
-            if (requestId !== searchRequestId)
+            if (requestId !== searchRequestId) {
+                Dbg.warn("Location search", "#" + requestId + " Photon reply ignored (stale), HTTP " + req.status);
                 return;
+            }
+            Dbg.warn("Location search", "#" + requestId + " Photon HTTP " + req.status + " " + req.statusText);
+            var collected = [];
+            if (req.status === 200) {
+                try {
+                    var feats = JSON.parse(req.responseText).features || [];
+                    // Prefer settlements / administrative areas over streets, shops, etc.
+                    var places = feats.filter(function (f) {
+                        var k = f.properties && f.properties.osm_key;
+                        return k === "place" || k === "boundary";
+                    });
+                    if (places.length === 0)
+                        places = feats;
+                    Dbg.log("Location search", "#" + requestId + " Photon returned " + feats.length + " item(s), kept " + places.length);
+                    places.forEach(function (f) {
+                        var pr = f.properties || {};
+                        var c = f.geometry && f.geometry.coordinates;   // GeoJSON order: [lon, lat]
+                        if (!c || c.length < 2 || !pr.name)
+                            return;
+                        var fix = configRoot._fixMixedScript;
+                        var pName = fix(pr.name);
+                        var pCounty = fix(pr.county);
+                        var pState = fix(pr.state);
+                        var pCountry = fix(pr.country);
+                        // Result title: "name, county, state, country" (a part equal to an earlier one is skipped)
+                        var parts = [];
+                        [pName, pCounty, pState, pCountry].forEach(function (part) {
+                            if (part.length > 0 && parts.every(function (x) {
+                                return x.toLowerCase() !== part.toLowerCase();
+                            }))
+                                parts.push(part);
+                        });
+                        var title = parts.join(", ");
+                        Dbg.log("Location search", "#" + requestId + " Photon item: " + title);
+                        collected.push({
+                            name: pName,
+                            admin1: pState,
+                            district: pCounty,
+                            country: pCountry,
+                            countryCode: (pr.countrycode || "").toUpperCase(),
+                            latitude: parseFloat(c[1]),
+                            longitude: parseFloat(c[0]),
+                            timezone: "",
+                            elevation: undefined,
+                            provider: "Photon",
+                            providerKey: "photon",
+                            localizedDisplayName: title
+                        });
+                    });
+                } catch (e) {
+                    Dbg.warn("Location search", "#" + requestId + " Photon parse error: " + e);
+                }
+            } else {
+                Dbg.log("Location search", "#" + requestId + " Photon body: " + String(req.responseText).substring(0, 400));
+            }
             var dedup = {}, finalList = [];
             for (var i = 0; i < collected.length; ++i) {
                 var item = collected[i];
@@ -185,88 +257,13 @@ ColumnLayout {
             selectedResult = null;
             selectedIndex = -1;
             resultsList.currentIndex = -1;
-        }
-
-        function fetchNominatim() {
-            queueRequest();
-            var req = new XMLHttpRequest();
-            var hasCyrillic = /[Ѐ-ӿ]/.test(q);
-            var lang = hasCyrillic ? "bg,ru,uk,sr,mk,en;q=0.3" : (configRoot.preferredLanguage.length > 0 ? configRoot.preferredLanguage + ",en;q=0.8" : "en");
-            var url = "https://nominatim.openstreetmap.org/search" + "?q=" + encodeURIComponent(q) + "&format=json" + "&limit=20" + "&addressdetails=1" + "&accept-language=" + lang;
-            req.open("GET", url);
-            req.setRequestHeader("User-Agent", "AdvancedWeatherWidget/1.0 (KDE Plasma plasmoid)");
-            req.onreadystatechange = function () {
-                if (req.readyState !== XMLHttpRequest.DONE)
-                    return;
-                if (requestId !== searchRequestId)
-                    return;
-                if (req.status === 200) {
-                    JSON.parse(req.responseText).forEach(function (item) {
-                        var a = item.address || {};
-                        var city = a.city || a.town || a.village || a.hamlet || a.suburb || a.municipality || a.county || "";
-                        var district = a.state_district || a.county || "";
-                        var state = a.state || a.region || "";
-                        var country = a.country || "";
-                        collected.push({
-                            name: city.length > 0 ? city : item.display_name,
-                            admin1: state,
-                            district: district,
-                            country: country,
-                            countryCode: (a.country_code || "").toUpperCase(),
-                            latitude: parseFloat(item.lat),
-                            longitude: parseFloat(item.lon),
-                            timezone: "",
-                            elevation: undefined,
-                            provider: "OpenStreetMap",
-                            providerKey: "nominatim",
-                            localizedDisplayName: item.display_name
-                        });
-                    });
-                }
-                done();
-            };
-            req.send();
-        }
-
-        function fetchOpenMeteo() {
-            queueRequest();
-            var req = new XMLHttpRequest();
-            req.open("GET", "https://geocoding-api.open-meteo.com/v1/search" + "?count=10&format=json&name=" + encodeURIComponent(q));
-            req.onreadystatechange = function () {
-                if (req.readyState !== XMLHttpRequest.DONE)
-                    return;
-                if (requestId !== searchRequestId)
-                    return;
-                if (req.status === 200) {
-                    var list = JSON.parse(req.responseText).results || [];
-                    list.forEach(function (it) {
-                        collected.push({
-                            name: it.name || "",
-                            admin1: it.admin1 || "",
-                            country: it.country || "",
-                            countryCode: (it.country_code || "").toUpperCase(),
-                            latitude: parseFloat(it.latitude),
-                            longitude: parseFloat(it.longitude),
-                            timezone: it.timezone || "",
-                            elevation: it.elevation,
-                            provider: "Open-Meteo",
-                            providerKey: "open-meteo",
-                            localizedDisplayName: (it.name || "") + (it.admin1 ? ", " + it.admin1 : "") + (it.country ? ", " + it.country : "")
-                        });
-                    });
-                }
-                done();
-            };
-            req.send();
-        }
-
-        fetchNominatim();
-        fetchOpenMeteo();
+        };
+        req.send();
     }
 
     Timer {
         id: searchDebounce
-        interval: 120
+        interval: 500
         repeat: false
         onTriggered: searchSubPageRoot.performSearch(searchField.text)
     }
@@ -315,8 +312,7 @@ ColumnLayout {
             border.width: 1
             implicitHeight: currentInfoCol.implicitHeight + 12
 
-            readonly property bool hasLocation:
-                configRoot.cfg_locationName && configRoot.cfg_locationName.length > 0
+            readonly property bool hasLocation: configRoot.cfg_locationName && configRoot.cfg_locationName.length > 0
 
             visible: hasLocation
 
@@ -343,9 +339,7 @@ ColumnLayout {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                         font.bold: true
-                        text: i18n("Location:") + " " + (currentInfoCard.hasLocation
-                            ? configRoot.cfg_locationName
-                            : i18n("None"))
+                        text: i18n("Location:") + " " + (currentInfoCard.hasLocation ? configRoot.cfg_locationName : i18n("None"))
                     }
                     BusyIndicator {
                         visible: searchSubPageRoot.currentInfoBusy
@@ -421,9 +415,15 @@ ColumnLayout {
                         searchSubPageRoot.searchBusy = false;
                         return;
                     }
+                    // Search starts after the debounce; show "Loading…" meanwhile instead of
+                    // flashing "No weather stations found".
+                    searchSubPageRoot.searchBusy = true;
                     searchDebounce.restart();
                 }
-                onAccepted: searchSubPageRoot.performSearch(text)
+                onAccepted: {
+                    searchDebounce.stop();
+                    searchSubPageRoot.performSearch(text);
+                }
             }
             ToolButton {
                 text: "✕"
@@ -478,9 +478,12 @@ ColumnLayout {
                             var locs;
                             try {
                                 locs = JSON.parse(configRoot.cfg_savedLocations || "[]");
-                                if (!Array.isArray(locs)) locs = [];
-                            } catch (e) { locs = []; }
-                            var isDup = locs.some(function(l) {
+                                if (!Array.isArray(locs))
+                                    locs = [];
+                            } catch (e) {
+                                locs = [];
+                            }
+                            var isDup = locs.some(function (l) {
                                 return Math.abs(l.lat - entryLat) < 0.01 && Math.abs(l.lon - entryLon) < 0.01;
                             });
 
@@ -546,7 +549,8 @@ ColumnLayout {
             type: Kirigami.MessageType.Warning
             text: configRoot.duplicateWarning
             showCloseButton: true
-            onVisibleChanged: if (!visible) configRoot.duplicateWarning = ""
+            onVisibleChanged: if (!visible)
+                configRoot.duplicateWarning = ""
         }
 
         Kirigami.InlineMessage {
@@ -561,6 +565,14 @@ ColumnLayout {
             visible: configRoot.locationCheckState === 3
             type: Kirigami.MessageType.Error
             text: configRoot.locationCheckMessage
+        }
+
+        Kirigami.InlineMessage {
+            Layout.fillWidth: true
+            visible: true
+            type: Kirigami.MessageType.Information
+            text: i18n("Location search by %1 · Map data © %2", "<a href=\"https://photon.komoot.io\">Photon</a>", "<a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap contributors</a>")
+            onLinkActivated: link => Qt.openUrlExternally(link)
         }
     }
 }
