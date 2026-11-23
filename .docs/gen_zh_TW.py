@@ -1247,6 +1247,1086 @@ TRANSLATIONS = {
     "not available - left unchanged": "不支援，維持不變",
     "selected here": "於此處選取",
     "will be changed": "將變更",
+    "Clouds: %1": "雲量：%1",
+    # --- 1.9.0 additions ---
+    "%1 %":
+        "%1 %",
+    "%1 %2 / 3 h":
+        "%1 %2 / 3 小時",
+    "%1 (Default)":
+        "%1（預設）",
+    "%1 GB":
+        "%1 GB",
+    "%1 MB":
+        "%1 MB",
+    "%1 ahead":
+        "前進 %1",
+    "%1 back":
+        "後退 %1",
+    "%1 h":
+        "%1 小時",
+    "%1 h %2":
+        "%1 小時 %2 分",
+    "%1 min":
+        "%1 分鐘",
+    "%1 of %2":
+        "%1 / %2",
+    "%1 per day":
+        "每天 %1",
+    "%1 px":
+        "%1 px",
+    "%1. Right-click to copy or paste it, drag it onto another level.":
+        "%1。點擊右鍵可複製或貼上此顏色，或將它拖曳到其他級距。",
+    "%1. Right-click to copy or paste it.":
+        "%1。點擊右鍵可複製或貼上。",
+    "%1/%2 · %3 fps":
+        "%1/%2 · %3 fps",
+    "%1: %2/%3":
+        "%1：%2/%3",
+    "%1: options":
+        "%1：選項",
+    "%1: request limit reached (HTTP %2) — trying again later":
+        "%1：已達請求上限（HTTP %2），稍後重試",
+    "%1: the API key was rejected (HTTP %2)":
+        "%1：API 金鑰遭拒（HTTP %2）",
+    "%1h":
+        "%1 小時",
+    "%1h %2m":
+        "%1 小時 %2 分",
+    "%1m":
+        "%1 分",
+    "0 h":
+        "0 小時",
+    "1 d":
+        "1 天",
+    "10 m":
+        "10 公尺",
+    "12 h":
+        "12 小時",
+    "12 hours back to now, every hour.":
+        "過去 12 小時至現在，每小時一張。",
+    "2 d":
+        "2 天",
+    "2 hours back to 1 hour ahead, every 10 minutes. It stays so when a longer range is set.":
+        "過去 2 小時至未來 1 小時，每 10 分鐘一張。設定較長的時間範圍時仍維持如此。",
+    "2 to 6 km: they often come before rain.":
+        "2 至 6 公里：常出現在降雨之前。",
+    "3 d":
+        "3 天",
+    "3 hours. In the range of the satellite one hour, in that of the radar 10 minutes, while they are on: the button shows it. It stops on their first and last image.":
+        "預設每步 3 小時。開啟衛星或雷達時，在其涵蓋時段內分別為每步 1 小時與 10 分鐘，按鈕上會顯示步長。逐步切換會停在該圖層的第一張與最後一張影像。",
+    "4 d":
+        "4 天",
+    "5 d":
+        "5 天",
+    "6 d":
+        "6 天",
+    "700 hPa":
+        "700 hPa",
+    "8 d":
+        "8 天",
+    ": ":
+        "：",
+    "A graph for each detail; point at a day to see its value in all of them":
+        "每項資料各一張圖表；指向某一天即可在所有圖表中查看其數值",
+    "A graph for each detail; point at an hour to see its value in all of them":
+        "每項資料各一張圖表；指向某個小時即可在所有圖表中查看其數值",
+    "A layer stops where its data stops.":
+        "圖層會在其資料結束處停止。",
+    "A palette has 2 to 12 colors.":
+        "調色盤需有 2 至 12 種顏色。",
+    "A southward field (negative Bz) lets the solar wind couple with Earth's magnetic field.":
+        "磁場朝南（Bz 為負）時，太陽風能與地球磁場耦合。",
+    "AEMET only covers Spain — choose another weather provider or a location in Spain.":
+        "AEMET 僅涵蓋西班牙 — 請選擇其他天氣資料來源，或西班牙境內的地點。",
+    "AOD":
+        "AOD",
+    "Add a color":
+        "新增顏色",
+    "Air %1":
+        "氣溫 %1",
+    "Air pressure brought to sea level, in hPa. Blue and purple: lows (clouds, rain, wind). Orange and red: highs (settled weather, fog in winter).":
+        "換算至海平面的氣壓，單位為 hPa。藍色與紫色：低壓（雲、雨、風）。橙色與紅色：高壓（天氣穩定，冬季易起霧）。",
+    "Air quality":
+        "空氣品質",
+    "Air quality (CAMS)":
+        "空氣品質（CAMS）",
+    "Air temperature at 2 m. Play a whole day: the land warms up in the afternoon and cools down at night, the sea hardly changes. A sharp edge that moves is a front.":
+        "離地 2 公尺的氣溫。播放一整天：陸地午後增溫、夜間降溫，海面則幾乎不變。移動中的明顯交界就是鋒面。",
+    "Albanian":
+        "阿爾巴尼亞語",
+    "Alert Language":
+        "警報語言",
+    "Alerts are shown in the language the issuing authority uses for your country.":
+        "警報會以您所在國家發布機關所使用的語言顯示。",
+    "All":
+        "全部",
+    "All clear":
+        "無警報",
+    "Also notify about routine test alerts":
+        "也通知例行測試警報",
+    "Animate the scenes of the expanded cards":
+        "展開的卡片會播放場景動畫",
+    "Animations:":
+        "動畫：",
+    "Another palette has this name.":
+        "已有其他調色盤使用此名稱。",
+    "Applies everywhere: panel, tooltip, widget header, Details, Forecast, Radar and History. Where space is tight (forecast and history lists, alerts), \\\"Region default (long)\\\" is shown in its short form.":
+        "套用於所有位置：面板、提示、小工具標題、詳細資訊、預報、雷達與歷史。空間有限處（預報與歷史清單、警報）會以簡短形式顯示「地區預設（長格式）」。",
+    "Arabic":
+        "阿拉伯語",
+    "At the bottom left of the map, small: the pictures loaded out of those of the range, and the pictures per second at most. Under them, the models: the global one, then the finer regional ones drawn over it in this view.":
+        "地圖左下角的小字：已載入影像數 / 範圍內影像總數，以及每秒最多影像數。其下方為模型：先是全球模型，再於此視野中疊加其上的較精細區域模型。",
+    "Atmosphere rim":
+        "大氣邊緣光",
+    "Average":
+        "平均",
+    "Back to now":
+        "回到現在",
+    "Basque":
+        "巴斯克語",
+    "Black":
+        "黑色",
+    "Blue":
+        "藍色",
+    "Blue-red":
+        "藍紅",
+    "Blur under the panels":
+        "面板下方模糊",
+    "Bosnian":
+        "波士尼亞語",
+    "Bottom":
+        "底部",
+    "Cache cleared.":
+        "快取已清除。",
+    "Calm":
+        "無風",
+    "Catalan":
+        "加泰隆尼亞語",
+    "Celestial bodies":
+        "天體",
+    "Chance of precip.":
+        "降水機率",
+    "Chance of precipitation":
+        "降水機率",
+    "Change over the last 3 hours, worked out from the readings the widget has collected. The open ring on the dial marks the pressure 3 hours ago.":
+        "過去 3 小時的變化，根據小工具收集的讀數計算。錶盤上的空心圓環標示 3 小時前的氣壓。",
+    "Change the color":
+        "變更顏色",
+    "Change the color (replaces the colors of the G scale)":
+        "變更顏色（取代 G 等級的顏色）",
+    "Change the colors":
+        "變更顏色",
+    "Change…":
+        "變更⋯",
+    "Choose the alert language for each saved location. If an alert is not published in that language, its native language is shown instead.":
+        "為每個已儲存的地點選擇警報語言。若警報未以該語言發布，則改為顯示其原始語言。",
+    "Choose the color of the graph":
+        "選擇圖表顏色",
+    "Choose the day":
+        "選擇日期",
+    "Clean style":
+        "簡潔樣式",
+    "Clear Cache":
+        "清除快取",
+    "Clearing…":
+        "正在清除⋯",
+    "Click":
+        "點擊",
+    "Click a day to show its hourly forecast. Double-click the graph to zoom in":
+        "點擊某天可顯示其逐時預報。連點兩下圖表可放大",
+    "Click on the icon":
+        "點擊圖示",
+    "Click to hide the hourly forecast":
+        "點擊以隱藏逐時預報",
+    "Click to show the hourly forecast":
+        "點擊以顯示逐時預報",
+    "Cloud cover":
+        "雲量",
+    "Coasts and borders":
+        "海岸線與邊界",
+    "Coasts and borders width":
+        "海岸線與邊界寬度",
+    "Cold":
+        "寒冷",
+    "Coldest night":
+        "最冷的一夜",
+    "Color":
+        "顏色",
+    "Color legend on the map":
+        "在地圖上顯示色彩圖例",
+    "Colors":
+        "顏色",
+    "Colors - %1":
+        "顏色 - %1",
+    "Comfortable":
+        "舒適",
+    "Compact":
+        "精簡",
+    "Cool":
+        "涼爽",
+    "Copy color":
+        "複製顏色",
+    "Could not reach Open-Meteo. Check your connection and try again.":
+        "無法連線至 Open-Meteo。請檢查網路連線後再試一次。",
+    "Croatian":
+        "克羅埃西亞語",
+    "Ctrl + / Ctrl −":
+        "Ctrl + / Ctrl −",
+    "Ctrl + double click":
+        "Ctrl + 連點兩下",
+    "Ctrl held over the map":
+        "在地圖上按住 Ctrl",
+    "Custom range…":
+        "自訂範圍⋯",
+    "Daily details":
+        "每日詳細資料",
+    "Daily graph order:":
+        "每日圖表順序：",
+    "Daily layout:":
+        "每日版面配置：",
+    "Data is available from %1 until yesterday.":
+        "可查詢 %1 至昨天的資料。",
+    "Date":
+        "日期",
+    "Date and Time":
+        "日期與時間",
+    "Date and time":
+        "日期與時間",
+    "Date and time formats are set in Misc → Date and Time.":
+        "日期與時間格式可在「其他 → 日期與時間」中設定。",
+    "Day and night":
+        "晝夜",
+    "Days":
+        "日期清單",
+    "Debug":
+        "除錯",
+    "Debug mode:":
+        "除錯模式：",
+    "Deep":
+        "深",
+    "Default colors and limits":
+        "預設顏色與級距",
+    "Default order":
+        "預設順序",
+    "Delete":
+        "刪除",
+    "Density":
+        "密度",
+    "Detailed log output is on":
+        "已開啟詳細記錄輸出",
+    "Detect location":
+        "偵測位置",
+    "Dew point":
+        "露點",
+    "Double click on the icon":
+        "連點兩下圖示",
+    "Double-click: radar range":
+        "連點兩下：雷達時間範圍",
+    "Double-click: satellite range":
+        "連點兩下：衛星時間範圍",
+    "Download the forecast layers in the background":
+        "在背景下載預報圖層",
+    "Drag to change the order of the tabs":
+        "拖曳以變更分頁順序",
+    "Drag to reorder the graphs, or use the edit button to change a color":
+        "拖曳以重新排列圖表，或使用編輯按鈕變更顏色",
+    "Dry":
+        "乾燥",
+    "Dust":
+        "沙塵",
+    "Dutch":
+        "荷蘭語",
+    "E":
+        "東",
+    "Each level must go higher than the one before.":
+        "每個級距都必須高於前一個。",
+    "Each new forecast run is downloaded as it comes out, so the map opens without waiting. Useful on a slow connection; it downloads even if you never open the map, so leave it off on a metered one.":
+        "每次有新的預報模型結果發布就會立即下載，讓地圖開啟時不必等待。適合網路較慢時使用；即使您從未開啟地圖也會下載，因此使用計量付費網路時請保持關閉。",
+    "Each temperature must be higher than the one before.":
+        "每個溫度都必須高於前一個。",
+    "Edit temperature palette":
+        "編輯溫度調色盤",
+    "Edit wind palette":
+        "編輯風速調色盤",
+    "Edit…":
+        "編輯⋯",
+    "Embedded radar paused":
+        "內嵌雷達已暫停",
+    "End":
+        "End",
+    "End date":
+        "結束日期",
+    "Esc":
+        "Esc",
+    "Every (hPa)":
+        "間距（hPa）",
+    "Extreme heat":
+        "酷熱",
+    "Failed: %1 — retrying…":
+        "失敗：%1 — 正在重試⋯",
+    "Falling":
+        "下降",
+    "Falling quickly":
+        "快速下降",
+    "Falling slowly":
+        "緩慢下降",
+    "Falling very rapidly":
+        "急遽下降",
+    "Feels like":
+        "體感溫度",
+    "Finnish":
+        "芬蘭語",
+    "First picture":
+        "第一張影像",
+    "Fold the layer column":
+        "收合圖層欄",
+    "Folded":
+        "收合時",
+    "Forecast layout:":
+        "預報版面配置：",
+    "Format":
+        "格式",
+    "Format and Tiles":
+        "格式與圖磚",
+    "Freezing":
+        "嚴寒",
+    "French":
+        "法語",
+    "Fresh breeze":
+        "清風",
+    "Full":
+        "完整",
+    "Full screen (F11)":
+        "全螢幕（F11）",
+    "Gale":
+        "大風",
+    "Galician":
+        "加利西亞語",
+    "Gentle breeze":
+        "微風",
+    "German":
+        "德語",
+    "Give the palette a name.":
+        "請為調色盤命名。",
+    "Globe":
+        "地球儀",
+    "Globe glow:":
+        "地球光暈：",
+    "Glow of the atmosphere around the globe (globe button on the map). Lower it if the day side looks washed out.":
+        "地球周圍的大氣光暈（地圖上的地球按鈕）。若日間側看起來過白，請調低此值。",
+    "Graphs":
+        "圖表",
+    "Graphs style:":
+        "圖表樣式：",
+    "Greek":
+        "希臘語",
+    "Green":
+        "綠色",
+    "Green dot":
+        "綠點",
+    "Grey-blue band":
+        "灰藍色帶",
+    "Gusts":
+        "陣風",
+    "H and L at the centers, followed from one picture to the next.":
+        "高壓 H 與低壓 L 標示於中心位置，並逐張影像追蹤其移動。",
+    "Half":
+        "一半",
+    "Header:":
+        "標頭：",
+    "Hebrew":
+        "希伯來語",
+    "Height":
+        "高度",
+    "High %1 · Low %2":
+        "最高 %1 · 最低 %2",
+    "Highs and lows":
+        "高低氣壓中心",
+    "Historical values are reanalysis data on a roughly 10 km grid, so they can differ from nearby station readings.":
+        "歷史數值為約 10 公里網格的再分析資料，因此可能與鄰近測站的觀測值不同。",
+    "History":
+        "歷史",
+    "History:":
+        "歷史：",
+    "Home":
+        "Home",
+    "Home / End":
+        "Home / End",
+    "Hot":
+        "炎熱",
+    "Hourly forecast for %1":
+        "%1 的逐時預報",
+    "Hourly graph order:":
+        "逐時圖表順序：",
+    "How dark the deep night is on the radar map when day and night are shown (button on the map).":
+        "顯示晝夜時（地圖上的按鈕），雷達地圖上深夜區域的暗度。",
+    "How far ahead":
+        "向未來多遠",
+    "How far back":
+        "向過去多遠",
+    "How to read the weather maps":
+        "如何判讀天氣地圖",
+    "Humid":
+        "潮濕",
+    "Hungarian":
+        "匈牙利語",
+    "Hurricane":
+        "颶風",
+    "Ice pellets":
+        "冰珠",
+    "In force until then: %1.":
+        "Plasma 重新啟動前仍使用：%1。",
+    "Interpolated pictures":
+        "插補影像",
+    "Irish":
+        "愛爾蘭語",
+    "Isobars":
+        "等壓線",
+    "Italian":
+        "義大利語",
+    "KDE Plasma was started with MangoHud injected into it. The overlay can crash the whole desktop shell when the web-based radar starts, so the radar was not loaded.":
+        "KDE Plasma 啟動時被注入了 MangoHud。網頁式雷達啟動時，此疊加層可能導致整個桌面 shell 當掉，因此未載入雷達。",
+    "Keys":
+        "按鍵",
+    "Kinds shown":
+        "顯示的類型",
+    "Kp index (G scale)":
+        "Kp 指數（G 等級）",
+    "Kp index/G":
+        "Kp 指數/G",
+    "Last 30 days":
+        "過去 30 天",
+    "Last 7 days":
+        "過去 7 天",
+    "Last 90 days":
+        "過去 90 天",
+    "Last month":
+        "上個月",
+    "Last picture":
+        "最後一張影像",
+    "Layers":
+        "圖層",
+    "Leave full screen (F11 or Esc)":
+        "離開全螢幕（F11 或 Esc）",
+    "Levels shown":
+        "顯示的雲層",
+    "Light air":
+        "軟風",
+    "Light breeze":
+        "輕風",
+    "Lightning":
+        "閃電",
+    "Lines":
+        "線條",
+    "Load embedded radar anyway":
+        "仍要載入內嵌雷達",
+    "Loading of the layers":
+        "圖層載入狀態",
+    "Location search by %1 · Map data © %2":
+        "地點搜尋由 %1 提供 · 地圖資料 © %2",
+    "Logs every API request (address without keys, HTTP status, time taken, size, what came back), the provider fallback chain, caches, timers and how long the widget needs to load everything. Every line starts with [Advanced Weather Widget - <component>].\\nView it with: journalctl --user -f | grep \\\"Advanced Weather Widget\\\". \\nPlease enable only when you experience issues with the widget.":
+        "記錄每個 API 請求（不含金鑰的位址、HTTP 狀態、耗時、大小、回傳內容）、天氣來源備援鏈、快取、計時器，以及小工具載入所有資料所需的時間。每行皆以 [Advanced Weather Widget - <component>] 開頭。\n檢視方式：journalctl --user -f | grep \"Advanced Weather Widget\"。\n請僅在小工具發生問題時啟用。",
+    "Loop (L)":
+        "循環（L）",
+    "Loop: off, stops at the end":
+        "循環：關閉，播放到結尾即停止",
+    "Loop: on":
+        "循環：開啟",
+    "Luxembourgish":
+        "盧森堡語",
+    "Macedonian":
+        "馬其頓語",
+    "Magenta band":
+        "洋紅色帶",
+    "Maltese":
+        "馬爾他語",
+    "Map Cache":
+        "地圖快取",
+    "Map controls:":
+        "地圖控制項：",
+    "Map icon theme:":
+        "地圖圖示主題：",
+    "Map tiles already seen stay on disk, so they are not downloaded a second time. A new size applies the next time Plasma starts.":
+        "已看過的地圖圖磚會保留在磁碟上，不會重複下載。新的大小會在下次啟動 Plasma 時生效。",
+    "Marks under the line":
+        "時間軸下方的標記",
+    "Maximum size:":
+        "大小上限：",
+    "Mean":
+        "平均",
+    "Mean temperature":
+        "平均氣溫",
+    "Medium":
+        "中",
+    "Mid":
+        "中層",
+    "Minor":
+        "輕微",
+    "Moderate breeze":
+        "和風",
+    "Mouse wheel":
+        "滑鼠滾輪",
+    "Muted":
+        "柔和",
+    "N":
+        "北",
+    "NE":
+        "東北",
+    "NW":
+        "西北",
+    "Native language of the alert (Default)":
+        "警報原始語言（預設）",
+    "Native language:":
+        "原始語言：",
+    "Near gale":
+        "疾風",
+    "New temperature palette":
+        "新增溫度調色盤",
+    "New wind palette":
+        "新增風速調色盤",
+    "New…":
+        "新增⋯",
+    "Next day":
+        "下一天",
+    "Next period":
+        "下一段期間",
+    "Night darkness:":
+        "夜間暗度：",
+    "Night lights":
+        "夜間燈光",
+    "Night lights density":
+        "夜間燈光密度",
+    "No active alerts":
+        "目前無有效警報",
+    "No data is available for this period yet. The most recent days can take up to about five days to appear.":
+        "此期間尚無資料。最近幾天的資料最多可能需要約五天才會出現。",
+    "No data yet":
+        "尚無資料",
+    "No snow":
+        "無積雪",
+    "No warnings in effect":
+        "目前無生效中的警報",
+    "Off":
+        "關閉",
+    "Off (warnings and errors are always logged)":
+        "關閉（警告與錯誤一律會記錄）",
+    "Off: no data-point dots are shown.":
+        "關閉：不顯示資料點。",
+    "One compact graph; point at a day to see all the other details":
+        "單一精簡圖表；指向某一天即可查看其他所有細節",
+    "One compact graph; point at an hour to see all the other details":
+        "單一精簡圖表；指向某一小時即可查看其他所有細節",
+    "One step ahead (→)":
+        "前進一步（→）",
+    "One step back (←)":
+        "後退一步（←）",
+    "Opacity: %1 %":
+        "不透明度：%1 %",
+    "Opacity: %1 % (Shift + wheel)":
+        "不透明度：%1 %（Shift + 滾輪）",
+    "Open":
+        "展開時",
+    "Open the layer column":
+        "展開圖層欄",
+    "Open-Meteo is rate limiting requests. Please try again in a little while.":
+        "Open-Meteo 正在限制請求頻率。請稍後再試。",
+    "Oppressive":
+        "悶熱",
+    "Options: right click":
+        "選項：點擊右鍵",
+    "Orange dot":
+        "橘色圓點",
+    "Orange warning":
+        "橙色警報",
+    "Order of the layers":
+        "圖層順序",
+    "Page Up / Page Down (or Ctrl + arrow)":
+        "Page Up / Page Down（或 Ctrl + 方向鍵）",
+    "Palette name":
+        "調色盤名稱",
+    "Panel opacity":
+        "面板不透明度",
+    "Paste color":
+        "貼上顏色",
+    "Peak %1":
+        "峰值 %1",
+    "Pictures loaded / pictures in the range<br>Pictures per second at most, set in the settings of the column":
+        "已載入影像數 / 範圍內影像數<br>每秒最多影像數，可於圖層欄設定中調整",
+    "Pictures per second":
+        "每秒影像數",
+    "Plasma theme":
+        "Plasma 主題",
+    "Play or pause":
+        "播放或暫停",
+    "Play or pause (Space)":
+        "播放或暫停（空白鍵）",
+    "Point at a day to see its details. Double-click the graph, or hold Ctrl and scroll the mouse wheel, to zoom in.":
+        "指向某一天即可查看詳細資料。連點兩下圖表，或按住 Ctrl 並捲動滑鼠滾輪，即可放大。",
+    "Pollutant":
+        "污染物",
+    "Precip sum":
+        "降水總量",
+    "Precipitation (rain, snow)":
+        "降水（雨、雪）",
+    "Precipitation hours":
+        "降水時數",
+    "Precipitation sum":
+        "降水總量",
+    "Prepare the radar in advance":
+        "預先準備雷達",
+    "Prepare widget in advance:":
+        "預先準備小工具：",
+    "Pressure tendency":
+        "氣壓趨勢",
+    "Preview:":
+        "預覽：",
+    "Previous day":
+        "上一天",
+    "Previous period":
+        "上一段期間",
+    "Quarter":
+        "四分之一",
+    "Rain and snow":
+        "雨夾雪",
+    "Range":
+        "時間範圍",
+    "Range limited to %1 days":
+        "範圍上限為 %1 天",
+    "Range limited to %1 days: if the chosen range is longer, the end date is set automatically (for example, start date %2 gives end date %3).":
+        "範圍限制為 %1 天：若所選範圍較長，結束日期會自動設定（例如開始日期為 %2 時，結束日期為 %3）。",
+    "Red warning":
+        "紅色警報",
+    "Regional models":
+        "區域模型",
+    "Relative humidity":
+        "相對濕度",
+    "Relative humidity at 2 m: how close the air is to being saturated. Brown: dry (under 30 %, fire risk). Sand and green: usual. Blue: near 100 % (fog, low clouds, rain). It goes up at night and down in the afternoon even when the air keeps the same water. For the water itself, see the dew point.":
+        "2 公尺高度的相對濕度：空氣接近飽和的程度。棕色：乾燥（低於 30 %，有火災風險）。沙色與綠色：一般。藍色：接近 100 %（霧、低雲、降雨）。即使空氣中的水氣含量不變，濕度也會在夜間升高、午後降低。若要看水氣本身，請參考露點。",
+    "Remove":
+        "移除",
+    "Resolution while playing":
+        "播放時的解析度",
+    "Restore":
+        "還原縮放",
+    "Right click on the icon":
+        "在圖示上點擊右鍵",
+    "Rising":
+        "上升",
+    "Rising quickly":
+        "快速上升",
+    "Rising slowly":
+        "緩慢上升",
+    "Rising very rapidly":
+        "急遽上升",
+    "Romansh":
+        "羅曼什語",
+    "Routine tests (for example \\\"Required Weekly Test\\\") are ignored: no notification and no sound.":
+        "例行測試（例如「Required Weekly Test」）會被忽略：不顯示通知，也不播放音效。",
+    "Routine tests (for example \\\"Required Weekly Test\\\") will show a notification, but never play an alert sound.":
+        "例行測試（例如「Required Weekly Test」）會顯示通知，但絕不播放警報音效。",
+    "S":
+        "南",
+    "SE":
+        "東南",
+    "SW":
+        "西南",
+    "Scottish Gaelic":
+        "蘇格蘭蓋爾語",
+    "Sea level pressure":
+        "海平面氣壓",
+    "Select a location to see its weather history":
+        "選擇地點以查看其歷史天氣",
+    "Select day":
+        "選擇日期",
+    "Select end date":
+        "選擇結束日期",
+    "Select start date":
+        "選擇開始日期",
+    "Separated":
+        "分開",
+    "Serbian":
+        "塞爾維亞語",
+    "Settings":
+        "設定",
+    "Settings: pictures per second, resolution while playing,<br>coasts and borders, Sun, Moon and night lights, dark map, see-through panels":
+        "設定：每秒影像數、播放時的解析度、<br>海岸線與邊界、太陽、月亮與夜間燈光、深色地圖、半透明面板",
+    "Shift + mouse wheel on the icon":
+        "在圖示上按 Shift + 滑鼠滾輪",
+    "Shortcuts":
+        "快捷鍵",
+    "Show dots for every day":
+        "顯示每天的資料點",
+    "Show dots for every hour":
+        "顯示每小時的資料點",
+    "Show in daily forecast:":
+        "在每日預報中顯示：",
+    "Show in forecast:":
+        "在預報中顯示：",
+    "Show in hourly forecast:":
+        "在逐時預報中顯示：",
+    "Single day…":
+        "單日⋯",
+    "Size":
+        "大小",
+    "Slider":
+        "滑桿",
+    "Slovak":
+        "斯洛伐克語",
+    "Slovenian":
+        "斯洛維尼亞語",
+    "Small":
+        "小",
+    "Smooth":
+        "連續漸層",
+    "Smooth (20 to 30 fps)":
+        "流暢（20 至 30 fps）",
+    "Snowfall":
+        "降雪量",
+    "Spanish":
+        "西班牙語",
+    "Speed":
+        "速度",
+    "Speed x%1":
+        "速度 x%1",
+    "Standard":
+        "標準",
+    "Start date":
+        "開始日期",
+    "Static scenes":
+        "靜態場景",
+    "Steady":
+        "穩定",
+    "Strong breeze":
+        "強風",
+    "Strong gale":
+        "烈風",
+    "Strongest gust":
+        "最強陣風",
+    "Strongest wind":
+        "最強風速",
+    "Sunshine":
+        "日照",
+    "Swedish":
+        "瑞典語",
+    "Tabs & Header Behavior":
+        "分頁與標頭行為",
+    "Tabs order:":
+        "分頁順序：",
+    "Tabs position:":
+        "分頁位置：",
+    "Temperature and chance of precip.":
+        "溫度與降水機率",
+    "Temperature bands:":
+        "溫度色帶：",
+    "Temperature color":
+        "溫度顏色",
+    "Temperature high":
+        "最高溫度",
+    "Temperature low":
+        "最低溫度",
+    "Temperature low/high":
+        "最低/最高溫度",
+    "Temperature opacity:":
+        "溫度不透明度：",
+    "Temperature palette:":
+        "溫度調色盤：",
+    "Tendency: collecting data":
+        "趨勢：正在收集資料",
+    "The CAMS forecast. The colors follow the European Air Quality Index: cyan good, green fair, yellow moderate, red poor, dark red very poor, purple extremely poor. The scale is logarithmic: each band covers a wider range than the one before.":
+        "CAMS 預報。顏色依據歐洲空氣品質指數：青色為良好、綠色為尚可、黃色為中等、紅色為差、暗紅色為很差、紫色為極差。刻度為對數尺度：每個色階涵蓋的範圍都比前一個更寬。",
+    "The Details, Forecast and History tabs are built in the background after startup and stay built when the widget is closed, so it opens at once. This uses more memory for the whole session, and the History tab loads its data at startup.":
+        "「詳細資訊」、「預報」與「歷史」分頁會在啟動後於背景建構，並在小工具關閉後保持建構狀態，因此開啟時能立即顯示。這會讓整個工作階段多使用一些記憶體，且「歷史」分頁會在啟動時載入資料。",
+    "The Radar tab opens at once on the most recent radar image, and the animation plays at once. It uses about 200 MB more memory: leave it off on a computer with little memory.":
+        "「雷達」分頁會立即開啟並顯示最新的雷達影像，動畫也會立即播放。這會多使用約 200 MB 記憶體：記憶體不多的電腦請保持關閉。",
+    "The cache is full: the oldest images make room for the new ones. If the map downloads areas it has already shown again, choose a larger size.":
+        "快取已滿：最舊的影像會被新影像取代。若地圖重複下載已顯示過的區域，請選擇較大的大小。",
+    "The cache will be cleared the next time the map opens.":
+        "快取將在下次開啟地圖時清除。",
+    "The chart needs the Qt Graphs or the KDE Quick Charts QML module.":
+        "圖表需要 Qt Graphs 或 KDE Quick Charts QML 模組。",
+    "The colored layers share the map, one at a time: temperature, pressure, humidity, dew point, air quality. The column lists the layers as they are stacked on the map, the top one first; the order is set with the button left of the settings. The wind always goes over the others.":
+        "彩色圖層共用同一張地圖，一次只顯示一個：溫度、氣壓、濕度、露點、空氣品質。欄中依圖層在地圖上的堆疊順序由上而下列出；順序可用設定左側的按鈕調整。風永遠疊在其他圖層之上。",
+    "The global model, then the finer regional<br>ones drawn over it in this view":
+        "全球模型，再於此視野中<br>疊上更精細的區域模型",
+    "The infrared picture of the clouds, from LibreWXR: the colder the top, the higher and whiter the cloud.":
+        "來自 LibreWXR 的雲層紅外線影像：雲頂越冷，雲越高、越白。",
+    "The isobars join the points of equal pressure. The wind blows almost along them, counterclockwise around a low in the northern hemisphere. The closer they are, the stronger the wind.":
+        "等壓線連接氣壓相同的各點。風幾乎沿著等壓線吹，在北半球繞低壓逆時針旋轉。等壓線越密，風越強。",
+    "The layer column":
+        "圖層欄",
+    "The line":
+        "時間軸",
+    "The lines flow with the wind, their color is the speed (the wind palette of the settings). By default: white when calm, green and blue for a breeze, yellow and orange for a strong wind, red and violet for a storm. Where the lines bunch up and turn, the weather changes.":
+        "線條隨風流動，顏色代表風速（設定中的風速調色盤）。預設：無風為白色，微風為綠色與藍色，強風為黃色與橙色，風暴為紅色與紫色。線條聚集並轉向之處，天氣會有變化。",
+    "The map could not be loaded. Check your internet connection.":
+        "無法載入地圖。請檢查網路連線。",
+    "The map needs QtWebEngine, which is not installed. You can still search for a location above.":
+        "地圖需要 QtWebEngine，但尚未安裝。您仍可在上方搜尋地點。",
+    "The map page needs WebGL, which this graphics setup does not offer.":
+        "地圖頁面需要 WebGL，但目前的圖形環境不支援。",
+    "The same keys in every language. They work while the Weather Map tab is shown.":
+        "所有語言皆使用相同的按鍵。顯示天氣地圖分頁時有效。",
+    "The temperature at which dew forms. It tells how much water the air really holds. Under 10 °C the air feels dry, at 13 to 16 °C you notice it, from 18 °C it is muggy, from 21 °C oppressive, from 24 °C tropical. When the night cools down to the dew point, dew or fog forms.":
+        "水氣凝結成露的溫度，可看出空氣實際含有多少水氣。低於 10 °C 時空氣感覺乾燥，13 至 16 °C 時開始有感覺，18 °C 起悶濕，21 °C 起悶熱，24 °C 起如熱帶般濕熱。夜間降溫至露點時，就會形成露水或霧。",
+    "The thin button on its left edge opens or folds it. The map stays where it is when the column opens over it.":
+        "其左緣的細長按鈕可開啟或收合此欄。欄在地圖上方展開時，地圖位置不會移動。",
+    "The two clocks: how far back and how far ahead":
+        "兩個時鐘：向過去多遠、向未來多遠",
+    "The weather maps cannot play here":
+        "此處無法播放天氣地圖",
+    "The whiter, the more of the sky is covered. With the three levels ticked you see the model's total cover, without counting twice the clouds over each other.":
+        "越白代表天空被雲覆蓋得越多。勾選三個層次時，會顯示模型的總雲量，不會重複計算上下重疊的雲。",
+    "The widget collects pressure readings as it updates; about an hour of readings is needed to work out the trend.":
+        "小工具會在更新時蒐集氣壓讀數；約需一小時的讀數才能算出趨勢。",
+    "The wind is drawn over the map, so over every layer wherever it is in this list: its place here orders the column of the tab only.":
+        "風繪製於地圖之上，因此無論它在此清單中的位置為何，都會覆蓋所有圖層：它在此處的位置只決定分頁中欄的排列順序。",
+    "Theme":
+        "跟隨主題",
+    "There are no saved locations yet. Save a location on the Location page to choose its alert language.":
+        "尚無已儲存的地點。請在「位置」頁面儲存地點後，再選擇其警報語言。",
+    "Thick":
+        "粗",
+    "Thin":
+        "細",
+    "This month":
+        "本月",
+    "This year":
+        "今年",
+    "Tiles":
+        "圖磚",
+    "Time":
+        "時間",
+    "Time line":
+        "時間軸",
+    "Tip: double-click the graph, or hold Ctrl and scroll the mouse wheel, to zoom in":
+        "提示：連點兩下圖表，或按住 Ctrl 並捲動滑鼠滾輪，即可放大",
+    "Top":
+        "頂部",
+    "Total":
+        "總雲量",
+    "Total: %1":
+        "總計：%1",
+    "Try again":
+        "重試",
+    "Turkish":
+        "土耳其語",
+    "UV":
+        "UV",
+    "Until":
+        "直到",
+    "Use the alert's native language":
+        "使用警報的原始語言",
+    "Use the built-in color":
+        "使用內建顏色",
+    "Use the built-in colors":
+        "使用內建顏色",
+    "Used:":
+        "已使用：",
+    "Values on the lines":
+        "線上數值",
+    "Very deep":
+        "非常深",
+    "Very high":
+        "非常高",
+    "Very humid":
+        "非常潮濕",
+    "Violent storm":
+        "暴風",
+    "Vivid":
+        "鮮豔",
+    "W":
+        "西",
+    "Warm":
+        "溫暖",
+    "Warmest day":
+        "最熱的一天",
+    "Warning":
+        "警報",
+    "Weather Map":
+        "天氣地圖",
+    "Weather Map (Bundled)":
+        "天氣地圖（內建）",
+    "Weather Maps":
+        "天氣地圖",
+    "Weather Maps / Radar":
+        "天氣地圖 / 雷達",
+    "Weather Maps / Radar is turned off, so these settings are read-only. Turn it on in Appearance › Widget › General › Visible tabs.":
+        "天氣地圖 / 雷達已關閉，因此這些設定為唯讀。請於「外觀 › 小工具 › 一般 › 可見頁籤」中開啟。",
+    "Weather history is unavailable (HTTP %1).":
+        "無法取得歷史天氣資料（HTTP %1）。",
+    "Weather maps":
+        "天氣地圖",
+    "WebP or PNG, 256 or 512 px. The satellite follows them too.":
+        "WebP 或 PNG，256 或 512 px。衛星圖層也會套用相同設定。",
+    "Welsh":
+        "威爾斯語",
+    "Wet snow":
+        "濕雪",
+    "Wettest day":
+        "降水量最多的一天",
+    "What falls in the three hours around the time shown, in mm/h. Rain goes from blue to green, yellow, red and magenta as it gets heavier; snow is lilac and violet; the dangerous kinds (ice) have colors of their own. Under 0.05 mm/h nothing is drawn.":
+        "所示時間前後三小時內的降水強度，單位為 mm/h。降雨隨雨勢增強，由藍色依序變為綠色、黃色、紅色與洋紅色；降雪為淡紫色與紫羅蘭色；危險類型（冰）有各自的顏色。低於 0.05 mm/h 時不繪製。",
+    "What the weather radars see falling, from LibreWXR. After now it is LibreWXR's nowcast, paler on the time line. In its range the time line slows down to its 10 minute steps.":
+        "來自 LibreWXR 的天氣雷達所見降水。現在之後為 LibreWXR 的臨近預報，在時間軸上顏色較淡。在其時間範圍內，時間軸會放慢為 10 分鐘間隔。",
+    "Wheel":
+        "齒輪",
+    "White":
+        "白色",
+    "Width":
+        "寬度",
+    "Width of the bands":
+        "色帶寬度",
+    "Wind color":
+        "風速顏色",
+    "Wind palette:":
+        "風速調色盤：",
+    "Yellow warning":
+        "黃色警報",
+    "Yesterday":
+        "昨天",
+    "Zoom in (or double-click the graph, or hold Ctrl and scroll the mouse wheel)":
+        "放大（或連點兩下圖表，或按住 Ctrl 並捲動滑鼠滾輪）",
+    "a click or a drag shows the picture under the pointer, and pauses.":
+        "點擊或拖曳即可顯示指標下方的影像，並暫停播放。",
+    "a picture straight from a forecast file.":
+        "直接來自預報檔案的影像。",
+    "a picture worked out between two files.":
+        "由兩個檔案之間推算而得的影像。",
+    "about 3000 m: the flow that carries the clouds and the rain, stronger and smoother. Only the global model is drawn: the regional models hold the 10 m wind only.":
+        "約 3000 公尺：帶動雲與雨的氣流，更強也更平穩。僅繪製全球模型：區域模型僅提供 10 公尺風。",
+    "about 7 days back to 5 days ahead. Further on the CAMS forecast stops and the pictures stay empty.":
+        "約回溯 7 天至未來 5 天。再往後 CAMS 預報即停止，影像會是空白。",
+    "about 7 days back to 6 days ahead.":
+        "過去約 7 天至未來 6 天。",
+    "above %1 %2":
+        "高於 %1 %2",
+    "above 6 km: thin veils of ice, the sun still gets through.":
+        "6 公里以上：薄薄的冰晶雲幕，陽光仍可穿透。",
+    "at":
+        "於",
+    "average":
+        "平均",
+    "back to now.":
+        "回到現在。",
+    "closes this panel, then leaves full screen.":
+        "關閉此面板；再按一次則離開全螢幕。",
+    "full screen on or off.":
+        "開啟或關閉全螢幕。",
+    "h":
+        "小時",
+    "how hazy the air is (smoke, dust).":
+        "空氣的混濁程度（煙霧、沙塵）。",
+    "how many degrees each color band covers.":
+        "每個色帶涵蓋的度數。",
+    "how the rain moves now. They are the same on every picture: they are not the wind of the time shown.":
+        "雨目前的移動方式。每張影像都相同：並非所示時間的風。",
+    "its options and its color legend, which can be hidden.":
+        "其選項與可隱藏的色彩圖例。",
+    "its options too.":
+        "同樣開啟其選項。",
+    "its options, at the left of the icon.":
+        "其選項，位於圖示左側。",
+    "lists the days of the range. The mouse wheel over the date goes to the next or previous day.":
+        "列出範圍內的每一天。在日期上滾動滑鼠滾輪可切換至下一天或上一天。",
+    "on the radar or the satellite: both at once.":
+        "在雷達或衛星上：同時顯示兩者。",
+    "on, the animation plays round again from the start; off, it stops on the last picture.":
+        "開啟時，動畫會從頭重新播放；關閉時，停在最後一張影像。",
+    "on, the finer models (about 2 km) are drawn over the global one where they cover the map: the valleys, the heights and the coasts come out. Off, only the global model (about 25 km) is read: about three times less to download there.":
+        "開啟時，在較精細的模型（約 2 公里）涵蓋地圖之處，會疊繪在全球模型之上：山谷、高地與海岸的細節都能呈現。關閉時僅讀取全球模型（約 25 公里）：這些地區的下載量約減少為三分之一。",
+    "on, the finer models (about 2 km: AROME, ICON-D2, HRRR...) are drawn over the global one where they cover the map: a truer wind in the mountains and along the coasts. Off, only the global model (about 25 km) is read: about three times less to download there. No effect at 700 hPa.":
+        "開啟時，在較精細的模型（約 2 公里：AROME、ICON-D2、HRRR⋯）涵蓋地圖之處，會疊繪在全球模型之上：山區與海岸的風更為貼近實際。關閉時僅讀取全球模型（約 25 公里）：這些地區的下載量約減少為三分之一。對 700 hPa 無效。",
+    "one per picture, colored once loaded, red when it failed.":
+        "每張影像一個，載入後上色，失敗時為紅色。",
+    "one step back or ahead, as the buttons of the time bar.":
+        "如同時間列上的按鈕，後退或前進一步。",
+    "opens the list of choices. It also gives the range of the radar or of the satellite, which stays when another layer is switched on.":
+        "開啟選項清單。清單中也提供雷達或衛星的時間範圍，開啟其他圖層時此範圍會保留。",
+    "play or pause.":
+        "播放或暫停。",
+    "rain, snow, wet snow, rain and snow, freezing rain, freezing drizzle, ice pellets.":
+        "雨、雪、濕雪、雨夾雪、凍雨、凍毛毛雨、冰珠。",
+    "scrolls the column.":
+        "捲動圖層欄。",
+    "shown":
+        "顯示中",
+    "snow in colors of its own.":
+        "降雪以專屬顏色呈現。",
+    "softens the edges of the rain.":
+        "柔化降雨的邊緣。",
+    "switch radar, satellite, wind, isobars, precipitation, clouds, temperature, pressure, humidity, dew point, air quality on or off.":
+        "開啟或關閉雷達、衛星、風、等壓線、降水、雲、溫度、氣壓、濕度、露點、空氣品質。",
+    "switches the isobars on or off.":
+        "開啟或關閉等壓線。",
+    "switches the layer on or off.":
+        "開啟或關閉圖層。",
+    "the Saharan dust.":
+        "撒哈拉沙塵。",
+    "the UV index of the day.":
+        "當日的 UV 指數。",
+    "the button left of the settings: drag a layer by its handle to stack it, the first one on top; its switch takes it out of the column or puts it back.":
+        "設定左側的按鈕：拖曳圖層把手即可堆疊，第一個位於最上層；其開關可將圖層移出此欄或放回。",
+    "the first or last picture.":
+        "第一張或最後一張影像。",
+    "the loop on or off.":
+        "開啟或關閉循環播放。",
+    "the next or previous choice, shown in a bubble while it changes.":
+        "下一個或上一個選項，變更時會顯示於氣泡中。",
+    "the next or previous speed, from the keyboard or the keypad.":
+        "下一個或上一個速度，可用鍵盤或數字鍵盤。",
+    "the next or previous speed.":
+        "下一個或上一個速度。",
+    "the next speed: x1, x2, x3, then x1 again.":
+        "下一個速度：x1、x2、x3，再回到 x1。",
+    "the opacity of the layer, from 0 to 100 %.":
+        "圖層的不透明度，從 0 到 100%。",
+    "the opacity, shown in a bubble while it changes and drawn as the bar under the icon.":
+        "不透明度，變更時顯示於氣泡中，並繪製為圖示下方的長條。",
+    "the palette of the radar.":
+        "雷達的調色盤。",
+    "the palettes of the widget settings, where they can be made and changed.":
+        "小工具設定中的調色盤，可在該處建立與修改。",
+    "the pollutants.":
+        "污染物。",
+    "the pressure between two lines: 2, 4 or 8 hPa. Zoomed in close, a line comes between two.":
+        "兩條線之間的氣壓差：2、4 或 8 hPa。放大檢視時，兩條線之間會再多一條。",
+    "the pressure written on the lines, in three sizes.":
+        "標示在線上的氣壓值，有三種大小。",
+    "the previous or next picture from a forecast file.":
+        "預報檔案中的上一張或下一張影像。",
+    "the radar alone, on its range. A click on the satellite then adds it. The same double click gives back the layers from before.":
+        "僅顯示雷達，並改用雷達的時間範圍。此時點擊衛星即可加入衛星。再連點兩下即可還原先前的圖層。",
+    "the range of the radar, paler for its nowcast.":
+        "雷達的時間範圍，臨近預報部分顏色較淡。",
+    "the range of the satellite.":
+        "衛星的時間範圍。",
+    "the recent strikes.":
+        "近期的雷擊。",
+    "the same steps.":
+        "相同的步進。",
+    "the satellite alone, on its range. A click on the radar then adds it.":
+        "僅顯示衛星，並改用衛星的時間範圍。此時點擊雷達即可加入雷達。",
+    "the storms tracked.":
+        "追蹤中的雷暴。",
+    "the theme's (white on a dark map, black on a light one) or a color of your choice.":
+        "主題顏色（深色地圖為白色，淺色地圖為黑色）或您自選的顏色。",
+    "the warnings in force.":
+        "生效中的警報。",
+    "the wind and the temperature under the pointer.":
+        "指標所在位置的風與溫度。",
+    "the wind you feel, shaped by the relief.":
+        "您實際感受到的風，受地形影響。",
+    "thin, normal or thick.":
+        "細、一般或粗。",
+    "under about 2 km: grey days, fog, drizzle.":
+        "約 2 公里以下：陰天、霧、毛毛雨。",
+    "up to":
+        "至",
+    "zoom in or out.":
+        "放大或縮小。",
+    "×%1":
+        "×%1",
 }
 
 # Special multi-line entries keyed by a unique marker
@@ -1296,104 +2376,283 @@ MULTILINE = {
 # Obsolete entries (removed from template.pot); generated as #~ blocks at end of .po
 # Format: list of (msgid_po_lines, msgstr_po_lines) — each is a list of raw PO quoted strings
 OBSOLETE = [
-    # Copied verbatim from upstream msgmerge output (HEAD zh_TW.po)
+    # Copied verbatim from upstream msgmerge output (main zh_TW.po, 1.9.0)
     (
-        '""\n"<b>Hybrid-GPU / NVIDIA PRIME + Wayland crash workaround</b><br/><br/>On some hybrid-GPU laptops running Wayland, the Radar tab\'s embedded browser view can crash the whole Plasma shell the moment it first paints, due to a driver-level conflict between the two GPUs. This option disables GPU-accelerated compositing inside that browser view to avoid it.<br/><br/>Only enable this if you\'re actually experiencing that crash - it costs some rendering performance on the radar map.<br/><br/><b>This needs a log out and back in to take effect</b>, since it has to be set before Plasma starts. It also applies to the whole session, so any other app that embeds a Chromium-based browser view will pick up the same setting.\\n"\n"                <br/><br/>If you enable this option, the following file will be created in: ~/.config/plasma-workspace/env/advanced-weather-widget-radar-gpu-workaround.sh"',
-        '""\n"<b>混合 GPU / NVIDIA PRIME + Wayland 當機解決方案</b><br/><br/>在部分執行 Wayland 的混合 GPU 筆電上，由於兩張 GPU 之間存在驅動程式層級的衝突，雷達分頁內嵌的瀏覽器畫面在首次繪製時可能導致整個 Plasma shell 當機。此選項會停用該瀏覽器畫面內的 GPU 加速合成功能，以避免這個問題。<br/><br/>只有在您實際遇到這個當機問題時才建議開啟──這會犧牲雷達地圖的一些繪圖效能。<br/><br/><b>此設定需要登出再登入才會生效</b>，因為必須在 Plasma 啟動前就設定好。此設定也會套用到整個工作階段，因此任何其他內嵌 Chromium 瀏覽器畫面的應用程式，都會套用相同設定。\\n"\n"                <br/><br/>若啟用此選項，將會建立以下檔案：~/.config/plasma-workspace/env/advanced-weather-widget-radar-gpu-workaround.sh"',
+        "\"12-hour format\"",
+        "\"12 \u5c0f\u6642\u5236\"",
     ),
     (
-        '"Colorful"',
-        '"彩色"',
+        "\"12h\"",
+        "\"12h\"",
     ),
     (
-        '"KDE Symbolic"',
-        '"KDE 符號圖示"',
+        "\"24-hour format\"",
+        "\"24 \u5c0f\u6642\u5236\"",
     ),
     (
-        '""\n"Providers are tried in order until one succeeds:\\n"\n"Open-Meteo  →  BBC Weather  →  met.no  →  Pirate Weather  →  Visual Crossing  →  Tomorrow.io  →  StormGlass  →  Weatherbit  →  QWeather  →  OpenWeatherMap  →  WeatherAPI.com\\n"\n"Open-Meteo is always tried first - it is free and requires no API key."',
-        '""\n"依序嘗試各供應商，直到成功為止：\\n"\n"Open-Meteo  →  BBC Weather  →  met.no  →  Pirate Weather  →  Visual Crossing  →  Tomorrow.io  →  StormGlass  →  Weatherbit  →  QWeather  →  OpenWeatherMap  →  WeatherAPI.com\\n"\n"Open-Meteo 永遠優先嘗試--免費且無需 API 金鑰。"',
+        "\"24h\"",
+        "\"24h\"",
     ),
     (
-        '"Radar color scheme:"',
-        '"雷達色彩配置："',
+        "\"256 px\"",
+        "\"256 px\"",
     ),
     (
-        '"Space"',
-        '"太空"',
+        "\"512 px\"",
+        "\"512 px\"",
     ),
     (
-        '"Symbolic"',
-        '"符號圖示"',
+        "\"All tabs\"",
+        "\"\u6240\u6709\u9801\u7c64\"",
     ),
     (
-        '"To unlock additional map layers (Rain, Clouds, Temperature, Wind, Pressure): disable Adaptive mode, select OpenWeatherMap as your weather provider, and enter your API key above. When you are ready, you can enable Adaptive mode again."',
-        '"若要解鎖其他地圖圖層（雨量、雲層、溫度、風速、氣壓）：請停用自適應模式，選擇 OpenWeatherMap 作為天氣供應商，並在上方填入 API 金鑰。完成後可再次啟用自適應模式。"',
+        "\"Animate the wind on the map (Open-Meteo)\"",
+        "\"\u5728\u5730\u5716\u4e0a\u4ee5\u52d5\u756b\u986f\u793a\u98a8\u5834\uff08Open-Meteo\uff09\"",
     ),
     (
-        '"Update timed out. Tap to retry."',
-        '"更新逾時，點擊重試。"',
+        "\"Arrows\"",
+        "\"\u7bad\u982d\"",
     ),
     (
-        '"%1 ending"',
-        '"%1趨緩"',
+        "\"Auto (device)\"",
+        "\"\u81ea\u52d5\uff08\u4f9d\u88dd\u7f6e\uff09\"",
     ),
     (
-        '"%1 expected"',
-        '"預計有%1"',
+        "\"Behavior\"",
+        "\"\u884c\u70ba\"",
     ),
     (
-        '"%1 expected to end %2."',
-        '"%1預計於%2結束。"',
+        "\"Black and White\"",
+        "\"\u9ed1\u767d\"",
     ),
     (
-        '"%1 possible %2."',
-        '"%2可能有%1。"',
+        "\"Date and time in header:\"",
+        "\"\u6a19\u984c\u986f\u793a\u65e5\u671f\u8207\u6642\u9593\uff1a\"",
     ),
     (
-        '"Carto Dark Matter (dark)"',
-        '"Carto Dark Matter（深色）"',
+        "\"Date:\"",
+        "\"\u65e5\u671f\uff1a\"",
     ),
     (
-        '"Carto Positron (light)"',
-        '"Carto Positron（淺色）"',
+        "\"Details only\"",
+        "\"\u50c5\u986f\u793a\u8a73\u7d30\u8cc7\u8a0a\"",
     ),
     (
-        '"Dash  -"',
-        '"破折號  -"',
+        "\"Forecast only\"",
+        "\"\u50c5\u986f\u793a\u9810\u5831\"",
     ),
     (
-        '"Not supported"',
-        '"不支援"',
+        "\"Format:\"",
+        "\"\u683c\u5f0f\uff1a\"",
     ),
     (
-        '"Show precipitation motion arrows"',
-        '"顯示降水移動箭頭"',
+        "\"Future alerts\"",
+        "\"\u672a\u4f86\u8b66\u5831\"",
     ),
     (
-        '"Snow ending"',
-        '"降雪趨緩"',
+        "\"Highlight snow and wintry precipitation with a distinct color\"",
+        "\"\u4ee5\u4e0d\u540c\u984f\u8272\u6a19\u793a\u964d\u96ea\u53ca\u51ac\u5b63\u964d\u6c34\"",
     ),
     (
-        '"Snow expected"',
-        '"預計降雪"',
+        "\"Keep the radar loaded in the background\"",
+        "\"\u5728\u80cc\u666f\u4fdd\u6301\u96f7\u9054\u5df2\u8f09\u5165\"",
     ),
     (
-        '"Snow expected to end %1."',
-        '"降雪預計於 %1 結束。"',
+        "\"Kp index/G forecast:\"",
+        "\"Kp \u6307\u6578/G \u7b49\u7d1a\u9810\u5831\uff1a\"",
     ),
     (
-        '"Snow possible %1."',
-        '"%1可能降雪。"',
+        "\"Overlay detected storm cells on the map\"",
+        "\"\u5728\u5730\u5716\u4e0a\u758a\u52a0\u5075\u6e2c\u5230\u7684\u5c0d\u6d41\u80de\"",
     ),
     (
-        '"Wind arrows"',
-        '"風向箭頭"',
+        "\"Palette:\"",
+        "\"\u8272\u5f69\u914d\u7f6e\uff1a\"",
     ),
     (
-        '"in the next hours"',
-        '"在未來數小時內"',
+        "\"Particle width:\"",
+        "\"\u7c92\u5b50\u5bec\u5ea6\uff1a\"",
+    ),
+    (
+        "\"Precip probability:\"",
+        "\"\u964d\u96e8\u6a5f\u7387\uff1a\"",
+    ),
+    (
+        "\"Precip sum:\"",
+        "\"\u964d\u6c34\u7e3d\u91cf\uff1a\"",
+    ),
+    (
+        "\"Pressure forecast:\"",
+        "\"\u6c23\u58d3\u9810\u5831\uff1a\"",
+    ),
+    (
+        "\"Radar + Satellite\"",
+        "\"\u96f7\u9054\uff0b\u885b\u661f\"",
+    ),
+    (
+        "\"Radar only\"",
+        "\"\u50c5\u986f\u793a\u96f7\u9054\"",
+    ),
+    (
+        "\"Show Radar tab in widget\"",
+        "\"\u5728\u5c0f\u5de5\u5177\u4e2d\u986f\u793a\u96f7\u9054\u9801\u7c64\"",
+    ),
+    (
+        "\"Show WMO alerts on the map\"",
+        "\"\u5728\u5730\u5716\u4e0a\u986f\u793a WMO \u8b66\u5831\"",
+    ),
+    (
+        "\"Show motion arrows on the map\"",
+        "\"\u5728\u5730\u5716\u4e0a\u986f\u793a\u79fb\u52d5\u7bad\u982d\"",
+    ),
+    (
+        "\"Show the wind at about 3000 m (700 hPa), the flow that steers the rain, instead of the surface wind at 10 m\"",
+        "\"\u986f\u793a\u7d04 3000 \u516c\u5c3a\u9ad8\u7a7a\uff08700 hPa\uff09\u5f15\u5c0e\u964d\u96e8\u79fb\u52d5\u7684\u6c23\u6d41\uff0c\u800c\u975e 10 \u516c\u5c3a\u9ad8\u7684\u5730\u9762\u98a8\"",
+    ),
+    (
+        "\"Show tile options: smoothing, snow mask, format and tile size\"",
+        "\"\u986f\u793a\u5716\u78da\u9078\u9805\uff1a\u5e73\u6ed1\u5316\u3001\u964d\u96ea\u906e\u7f69\u3001\u683c\u5f0f\u53ca\u5716\u78da\u5927\u5c0f\"",
+    ),
+    (
+        "\"Smooth radar tile edges\"",
+        "\"\u5e73\u6ed1\u5316\u96f7\u9054\u5716\u78da\u908a\u7de3\"",
+    ),
+    (
+        "\"Snow mask\"",
+        "\"\u964d\u96ea\u906e\u7f69\"",
+    ),
+    (
+        "\"The radar map is prepared in the background after login and stays ready while the popup is closed, so the Radar tab opens at once. It uses more memory and starts QtWebEngine with Plasma.\"",
+        "\"\u96f7\u9054\u5730\u5716\u6703\u5728\u767b\u5165\u5f8c\u65bc\u80cc\u666f\u6e96\u5099\uff0c\u4e26\u5728\u5f48\u51fa\u8996\u7a97\u95dc\u9589\u6642\u4fdd\u6301\u5c31\u7dd2\uff0c\u56e0\u6b64\u96f7\u9054\u5206\u9801\u53ef\u7acb\u5373\u958b\u555f\u3002\u9019\u6703\u4f54\u7528\u8f03\u591a\u8a18\u61b6\u9ad4\uff0c\u4e26\u96a8 Plasma \u4e00\u8d77\u555f\u52d5 QtWebEngine\u3002\"",
+    ),
+    (
+        "\"Tile size:\"",
+        "\"\u5716\u78da\u5927\u5c0f\uff1a\"",
+    ),
+    (
+        "\"UV index forecast:\"",
+        "\"\u7d2b\u5916\u7dda\u6307\u6578\u9810\u5831\uff1a\"",
+    ),
+    (
+        "\"Winds\"",
+        "\"\u98a8\u5834\"",
+    ),
+    (
+        "\"Winds aloft\"",
+        "\"\u9ad8\u7a7a\u98a8\"",
+    ),
+    (
+        "\"You may need to increase the widget's width to see all the selected information\"",
+        "\"\u60a8\u53ef\u80fd\u9700\u8981\u589e\u52a0\u5c0f\u5de5\u5177\u7684\u5bec\u5ea6\uff0c\u4ee5\u986f\u793a\u6240\u6709\u5df2\u9078\u53d6\u7684\u8cc7\u8a0a\"",
+    ),
+    (
+        "\"Update timed out. Click the refresh button to retry.\"",
+        "\"\u66f4\u65b0\u903e\u6642\uff0c\u8acb\u9ede\u64ca\u91cd\u65b0\u6574\u7406\u6309\u9215\u91cd\u8a66\u3002\"",
+    ),
+    (
+        "\"Smooth (12 to 30 fps)\"",
+        "\"\u6d41\u66a2\uff0812 \u81f3 30 fps\uff09\"",
+    ),
+    (
+        "\"\"\n\"<b>Hybrid-GPU / NVIDIA PRIME + Wayland crash workaround</b><br/><br/>On some hybrid-GPU laptops running Wayland, the Radar tab's embedded browser view can crash the whole Plasma shell the moment it first paints, due to a driver-level conflict between the two GPUs. This option disables GPU-accelerated compositing inside that browser view to avoid it.<br/><br/>Only enable this if you're actually experiencing that crash - it costs some rendering performance on the radar map.<br/><br/><b>This needs a log out and back in to take effect</b>, since it has to be set before Plasma starts. It also applies to the whole session, so any other app that embeds a Chromium-based browser view will pick up the same setting.\\n\"\n\"                <br/><br/>If you enable this option, the following file will be created in: ~/.config/plasma-workspace/env/advanced-weather-widget-radar-gpu-workaround.sh\"",
+        "\"\"\n\"<b>\u6df7\u5408 GPU / NVIDIA PRIME + Wayland \u7576\u6a5f\u89e3\u6c7a\u65b9\u6848</b><br/><br/>\u5728\u90e8\u5206\u57f7\u884c Wayland \u7684\u6df7\u5408 GPU \u7b46\u96fb\u4e0a\uff0c\u7531\u65bc\u5169\u5f35 GPU \u4e4b\u9593\u5b58\u5728\u9a45\u52d5\u7a0b\u5f0f\u5c64\u7d1a\u7684\u885d\u7a81\uff0c\u96f7\u9054\u5206\u9801\u5167\u5d4c\u7684\u700f\u89bd\u5668\u756b\u9762\u5728\u9996\u6b21\u7e6a\u88fd\u6642\u53ef\u80fd\u5c0e\u81f4\u6574\u500b Plasma shell \u7576\u6a5f\u3002\u6b64\u9078\u9805\u6703\u505c\u7528\u8a72\u700f\u89bd\u5668\u756b\u9762\u5167\u7684 GPU \u52a0\u901f\u5408\u6210\u529f\u80fd\uff0c\u4ee5\u907f\u514d\u9019\u500b\u554f\u984c\u3002<br/><br/>\u53ea\u6709\u5728\u60a8\u5be6\u969b\u9047\u5230\u9019\u500b\u7576\u6a5f\u554f\u984c\u6642\u624d\u5efa\u8b70\u958b\u555f\u2500\u2500\u9019\u6703\u72a7\u7272\u96f7\u9054\u5730\u5716\u7684\u4e00\u4e9b\u7e6a\u5716\u6548\u80fd\u3002<br/><br/><b>\u6b64\u8a2d\u5b9a\u9700\u8981\u767b\u51fa\u518d\u767b\u5165\u624d\u6703\u751f\u6548</b>\uff0c\u56e0\u70ba\u5fc5\u9808\u5728 Plasma \u555f\u52d5\u524d\u5c31\u8a2d\u5b9a\u597d\u3002\u6b64\u8a2d\u5b9a\u4e5f\u6703\u5957\u7528\u5230\u6574\u500b\u5de5\u4f5c\u968e\u6bb5\uff0c\u56e0\u6b64\u4efb\u4f55\u5176\u4ed6\u5167\u5d4c Chromium \u700f\u89bd\u5668\u756b\u9762\u7684\u61c9\u7528\u7a0b\u5f0f\uff0c\u90fd\u6703\u5957\u7528\u76f8\u540c\u8a2d\u5b9a\u3002\\n\"\n\"                <br/><br/>\u82e5\u555f\u7528\u6b64\u9078\u9805\uff0c\u5c07\u6703\u5efa\u7acb\u4ee5\u4e0b\u6a94\u6848\uff1a~/.config/plasma-workspace/env/advanced-weather-widget-radar-gpu-workaround.sh\"",
+    ),
+    (
+        "\"Colorful\"",
+        "\"\u5f69\u8272\"",
+    ),
+    (
+        "\"KDE Symbolic\"",
+        "\"KDE \u7b26\u865f\u5716\u793a\"",
+    ),
+    (
+        "\"\"\n\"Providers are tried in order until one succeeds:\\n\"\n\"Open-Meteo  \u2192  BBC Weather  \u2192  met.no  \u2192  Pirate Weather  \u2192  Visual Crossing  \u2192  Tomorrow.io  \u2192  StormGlass  \u2192  Weatherbit  \u2192  QWeather  \u2192  OpenWeatherMap  \u2192  WeatherAPI.com\\n\"\n\"Open-Meteo is always tried first - it is free and requires no API key.\"",
+        "\"\"\n\"\u4f9d\u5e8f\u5617\u8a66\u5404\u4f9b\u61c9\u5546\uff0c\u76f4\u5230\u6210\u529f\u70ba\u6b62\uff1a\\n\"\n\"Open-Meteo  \u2192  BBC Weather  \u2192  met.no  \u2192  Pirate Weather  \u2192  Visual Crossing  \u2192  Tomorrow.io  \u2192  StormGlass  \u2192  Weatherbit  \u2192  QWeather  \u2192  OpenWeatherMap  \u2192  WeatherAPI.com\\n\"\n\"Open-Meteo \u6c38\u9060\u512a\u5148\u5617\u8a66--\u514d\u8cbb\u4e14\u7121\u9700 API \u91d1\u9470\u3002\"",
+    ),
+    (
+        "\"Radar color scheme:\"",
+        "\"\u96f7\u9054\u8272\u5f69\u914d\u7f6e\uff1a\"",
+    ),
+    (
+        "\"Symbolic\"",
+        "\"\u7b26\u865f\u5716\u793a\"",
+    ),
+    (
+        "\"To unlock additional map layers (Rain, Clouds, Temperature, Wind, Pressure): disable Adaptive mode, select OpenWeatherMap as your weather provider, and enter your API key above. When you are ready, you can enable Adaptive mode again.\"",
+        "\"\u82e5\u8981\u89e3\u9396\u5176\u4ed6\u5730\u5716\u5716\u5c64\uff08\u96e8\u91cf\u3001\u96f2\u5c64\u3001\u6eab\u5ea6\u3001\u98a8\u901f\u3001\u6c23\u58d3\uff09\uff1a\u8acb\u505c\u7528\u81ea\u9069\u61c9\u6a21\u5f0f\uff0c\u9078\u64c7 OpenWeatherMap \u4f5c\u70ba\u5929\u6c23\u4f9b\u61c9\u5546\uff0c\u4e26\u5728\u4e0a\u65b9\u586b\u5165 API \u91d1\u9470\u3002\u5b8c\u6210\u5f8c\u53ef\u518d\u6b21\u555f\u7528\u81ea\u9069\u61c9\u6a21\u5f0f\u3002\"",
+    ),
+    (
+        "\"Update timed out. Tap to retry.\"",
+        "\"\u66f4\u65b0\u903e\u6642\uff0c\u9ede\u64ca\u91cd\u8a66\u3002\"",
+    ),
+    (
+        "\"%1 ending\"",
+        "\"%1\u8da8\u7de9\"",
+    ),
+    (
+        "\"%1 expected\"",
+        "\"\u9810\u8a08\u6709%1\"",
+    ),
+    (
+        "\"%1 expected to end %2.\"",
+        "\"%1\u9810\u8a08\u65bc%2\u7d50\u675f\u3002\"",
+    ),
+    (
+        "\"%1 possible %2.\"",
+        "\"%2\u53ef\u80fd\u6709%1\u3002\"",
+    ),
+    (
+        "\"Carto Dark Matter (dark)\"",
+        "\"Carto Dark Matter\uff08\u6df1\u8272\uff09\"",
+    ),
+    (
+        "\"Carto Positron (light)\"",
+        "\"Carto Positron\uff08\u6dfa\u8272\uff09\"",
+    ),
+    (
+        "\"Dash  -\"",
+        "\"\u7834\u6298\u865f  -\"",
+    ),
+    (
+        "\"Not supported\"",
+        "\"\u4e0d\u652f\u63f4\"",
+    ),
+    (
+        "\"Show precipitation motion arrows\"",
+        "\"\u986f\u793a\u964d\u6c34\u79fb\u52d5\u7bad\u982d\"",
+    ),
+    (
+        "\"Snow ending\"",
+        "\"\u964d\u96ea\u8da8\u7de9\"",
+    ),
+    (
+        "\"Snow expected\"",
+        "\"\u9810\u8a08\u964d\u96ea\"",
+    ),
+    (
+        "\"Snow expected to end %1.\"",
+        "\"\u964d\u96ea\u9810\u8a08\u65bc %1 \u7d50\u675f\u3002\"",
+    ),
+    (
+        "\"Snow possible %1.\"",
+        "\"%1\u53ef\u80fd\u964d\u96ea\u3002\"",
+    ),
+    (
+        "\"in the next hours\"",
+        "\"\u5728\u672a\u4f86\u6578\u5c0f\u6642\u5167\"",
     ),
 ]
+
+# Translations that depend on msgctxt: (msgctxt, msgid) -> msgstr.
+# Only needed where one msgid has different meanings in different contexts;
+# otherwise TRANSLATIONS (keyed by msgid alone) applies to every context.
+CTX_TRANSLATIONS = {
+    ("@label daily maximum temperature", "High"): "最高溫",
+    ("@label daily minimum temperature", "Low"): "最低溫",
+    ("@label no precipitation at that place", "Dry"): "無降水",
+    ("isobar lines", "Normal"): "一般",
+    ("text size", "Large"): "大",
+}
 
 # Plural entries (msgid_plural / msgstr[N]), keyed by the singular msgid.
 # Chinese has no grammatical plural (nplurals=1), so only msgstr[0] is kept.
@@ -1401,6 +2660,10 @@ PLURAL = {
     "Updated %1 day ago": "%1 天前更新",
     "Updated %1 hour ago": "%1 小時前更新",
     "Updated %1 minute ago": "%1 分鐘前更新",
+    "%1 day has no data yet": "%1 天尚無資料",
+    "%1 snowy day": "%1 個降雪日",
+    "%1 wet day": "%1 個降水日",
+    "and %1 more alert": "還有 %1 則警報",
 }
 
 
@@ -1465,8 +2728,12 @@ def translate_entry(entry):
                 result.append(line)
         return '\n'.join(result)
 
-    # Look up in TRANSLATIONS
-    translation = TRANSLATIONS.get(msgid_text)
+    # Look up in CTX_TRANSLATIONS first (same msgid, different msgctxt), then TRANSLATIONS
+    _cm = next((l for l in raw_lines if l.startswith('msgctxt "')), None)
+    ctx_text = _cm[9:-1] if _cm else None
+    translation = CTX_TRANSLATIONS.get((ctx_text, msgid_text)) if ctx_text else None
+    if translation is None:
+        translation = TRANSLATIONS.get(msgid_text)
 
     # If not found, try MULTILINE by startswith match (supports duplicate first lines)
     if translation is None:
@@ -1567,7 +2834,12 @@ output = '\n\n'.join(translated) + '\n'
 # Append obsolete entries as #~ blocks
 if OBSOLETE:
     obsolete_lines = []
+    _active = {extract_msgid_text(e) for e in raw_entries[1:]}
     for msgid_po, msgstr_po in OBSOLETE:
+        # skip entries that upstream has since re-activated in template.pot
+        if msgid_po.startswith('"') and msgid_po.endswith('"') and '\n' not in msgid_po \
+                and msgid_po[1:-1] in _active:
+            continue
         for line in ('msgid ' + msgid_po).split('\n'):
             obsolete_lines.append('#~ ' + line)
         for line in ('msgstr ' + msgstr_po).split('\n'):
